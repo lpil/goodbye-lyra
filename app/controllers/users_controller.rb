@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        sign_in @user
         format.html do
           redirect_to @user, notice: 'User was successfully created.'
         end
